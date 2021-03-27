@@ -20,7 +20,7 @@ using namespace std;
 /*
  * Enter your PSU IDs here to select the appropriate scanning order.
  */
-#define PSU_ID_SUM (912345679+911111111)
+#define PSU_ID_SUM (931701543+907056774)
 
 /*
  * Some global variables to track heuristic progress.
@@ -61,9 +61,21 @@ std::string generateCacheLatencyParams(string halfBackedConfig) {
  * Returns 1 if configuration is valid, else 0
  */
 int validateConfiguration(std::string configuration) {
+	int ifq = (int)GLOB_baseline.at(0);
+	int ilone = (int)GLOB_baseline.at(4);
+	int ultwo = (int)GLOB_baseline.at(16);
 
-	// FIXME - YOUR CODE HERE
-
+	// Conditional 1 in section 8.3
+	if (ilone < ifq){
+		return -1;
+	}
+	// Conditional 2 in section 8.3
+	if (ultwo < ilone + 1){
+		return -1;
+	}
+	// Conditional 3 in section 8.3
+	
+	// Conditional 4 in section 8.3
 	// The below is a necessary, but insufficient condition for validating a
 	// configuration.
 	return isNumDimConfiguration(configuration);

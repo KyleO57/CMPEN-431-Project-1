@@ -67,8 +67,8 @@ int validateConfiguration(std::string configuration) {
 	unsigned int ilone = getil1size(configuration);
 	unsigned int ultwo = getl2size(configuration);
 
-	printf("\n\n%u\n\n", dlone);
-	/*
+	
+	
 	// Conditional 1 in section 8.3
 	if (ilone < ifq){
 		return 0;
@@ -80,7 +80,7 @@ int validateConfiguration(std::string configuration) {
 	// Conditional 3 in section 8.3
 	
 	// Conditional 4 in section 8.3
-	*/
+	
 	// The below is a necessary, but insufficient condition for validating a
 	// configuration.
 	return isNumDimConfiguration(configuration);

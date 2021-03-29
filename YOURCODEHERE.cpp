@@ -68,11 +68,11 @@ int validateConfiguration(std::string configuration) {
 
 	// Conditional 1 in section 8.3
 	if (ilone < ifq){
-		return -1;
+		return 0;
 	}
 	// Conditional 2 in section 8.3
 	if (ultwo < ilone + 1){
-		return -1;
+		return 0;
 	}
 	// Conditional 3 in section 8.3
 	
@@ -107,7 +107,7 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 	// 5. GLOB_seen_configurations
 
 	std::string nextconfiguration = currentconfiguration;
-	printf("%s",currentconfiguration);
+	printf("%s",currentconfiguration.c_str());
 	// Continue if proposed configuration is invalid or has been seen/checked before.
 	while (!validateConfiguration(nextconfiguration) ||
 		GLOB_seen_configurations[nextconfiguration]) {

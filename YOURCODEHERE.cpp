@@ -67,7 +67,7 @@ int validateConfiguration(std::string configuration) {
 	unsigned int ilone = getil1size(configuration);
 	unsigned int ultwo = getl2size(configuration);
 
-	printf("\n\n%u\n\n", ifq);
+	printf("\n\n%u\n\n", dlone);
 	/*
 	// Conditional 1 in section 8.3
 	if (ilone < ifq){

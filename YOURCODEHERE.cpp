@@ -61,6 +61,7 @@ std::string generateCacheLatencyParams(string halfBackedConfig) {
  * Returns 1 if configuration is valid, else 0
  */
 int validateConfiguration(std::string configuration) {
+
 	int ifq = (int)GLOB_baseline.at(0);
 	int ilone = (int)GLOB_baseline.at(4);
 	int ultwo = (int)GLOB_baseline.at(16);
@@ -76,6 +77,7 @@ int validateConfiguration(std::string configuration) {
 	// Conditional 3 in section 8.3
 	
 	// Conditional 4 in section 8.3
+	
 	// The below is a necessary, but insufficient condition for validating a
 	// configuration.
 	return isNumDimConfiguration(configuration);
@@ -105,6 +107,7 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 	// 5. GLOB_seen_configurations
 
 	std::string nextconfiguration = currentconfiguration;
+	printf("%s",currentconfiguration);
 	// Continue if proposed configuration is invalid or has been seen/checked before.
 	while (!validateConfiguration(nextconfiguration) ||
 		GLOB_seen_configurations[nextconfiguration]) {

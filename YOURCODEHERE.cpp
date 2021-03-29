@@ -107,7 +107,7 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 	// 5. GLOB_seen_configurations
 
 	std::string nextconfiguration = currentconfiguration;
-	printf("%s",currentconfiguration.c_str());
+	printf(\n"%s\n",currentconfiguration.c_str());
 	// Continue if proposed configuration is invalid or has been seen/checked before.
 	while (!validateConfiguration(nextconfiguration) ||
 		GLOB_seen_configurations[nextconfiguration]) {

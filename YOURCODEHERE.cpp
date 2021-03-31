@@ -153,7 +153,7 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 	std::string nextconfiguration = currentconfiguration;
 	//printf("\n%s\n",currentconfiguration.c_str());
 	// Continue if proposed configuration is invalid or has been seen/checked before.
-	printf("\nDimesion: %u\n", exploreDimOrder[currentlyExploringDim]);
+	
 	while (!validateConfiguration(nextconfiguration) ||
 		GLOB_seen_configurations[nextconfiguration]) {
 		
@@ -237,7 +237,7 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 		
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	}
-	
+	printf("\nDimesion: %u\n", exploreDimOrder[currentlyExploringDim]);
 	return nextconfiguration;
 }
 

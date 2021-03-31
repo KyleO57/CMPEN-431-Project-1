@@ -81,7 +81,7 @@ std::string generateCacheLatencyParams(string halfBackedConfig) {
 int validateConfiguration(std::string configuration) {
 	
 	// ifq size in bytes
-	unsigned int ifq = 8 * (extractConfigPararm(configuration, 0) + 1);
+	unsigned int ifq = 8 * (2^extractConfigPararm(configuration, 0));
 	// il1 and ul2 BLOCK size in bytes
 	unsigned int ilone_bsize = extractConfigPararm(configuration, 2);
 	unsigned int ultwo_bsize = extractConfigPararm(configuration, 8);

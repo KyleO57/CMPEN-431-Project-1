@@ -148,7 +148,6 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 		// Check if DSE has been completed before and return current
 		// configuration.
 		if(isDSEComplete) {
-			printf("\n\nyert\n\n");
 			return currentconfiguration;
 		}
 
@@ -193,7 +192,7 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 		// CHANGE ME
 
 		printf("\n\nhere3\n\n");
-		for (int dim = (currentlyExploringDim + 1);
+		for (int dim = (exploreDimOrder[currentlyExploringDim] + 1);
 				dim < (NUM_DIMS - NUM_DIMS_DEPENDENT); ++dim) {
 			ss << extractConfigPararm(bestConfig, dim) << " ";
 		}

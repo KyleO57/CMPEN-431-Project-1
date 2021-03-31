@@ -30,6 +30,8 @@ using namespace std;
 unsigned int currentlyExploringDim = 0;
 bool currentDimDone = false;
 bool isDSEComplete = false;
+int exploreDimOrder[NUM_DIMS - NUM_DIMS_DEPENDENT] = {11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 1, 12, 13, 14};
+int start = 0;
 
 /*
  * Given a half-baked configuration containing cache properties, generate
@@ -82,8 +84,6 @@ int validateConfiguration(std::string configuration) {
 	unsigned int dlone = getdl1size(configuration);
 	unsigned int ilone = getil1size(configuration);
 	unsigned int ultwo = getl2size(configuration);
-
-	
 	
 	// Conditional 1 in section 8.3
 	if (ilone_bsize < ifq){
@@ -136,7 +136,7 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 	// 3. NUM_DIMS
 	// 4. NUM_DIMS_DEPENDENT
 	// 5. GLOB_seen_configurations
-
+	
 	std::string nextconfiguration = currentconfiguration;
 	printf("\n%s\n",currentconfiguration.c_str());
 	// Continue if proposed configuration is invalid or has been seen/checked before.
@@ -161,18 +161,23 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 		// Fill in the dimensions already-scanned with the already-selected best
 		// value.
 		// CHANGE ME
-		for (int dim = 0; dim < currentlyExploringDim; ++dim) {
+		for (int dim = 0; dim < exploreDimOrder[currentlyExploringDim]; ++dim) {
 			ss << extractConfigPararm(bestConfig, dim) << " ";
 		}
 
 		// Handling for currently exploring dimension. This is a very dumb
 		// implementation.
-		int nextValue = extractConfigPararm(nextconfiguration,
-				currentlyExploringDim) + 1;
-
+		int nextValue;
+		if (start == 0){
+			nextValue = 0;
+		}
+		else{
+			nextValue = extractConfigPararm(nextconfiguration,
+				exploreDimOrder[currentlyExploringDim]) + 1;
+		}
 		// CHANGE ME
-		if (nextValue >= GLOB_dimensioncardinality[currentlyExploringDim]) {
-			nextValue = GLOB_dimensioncardinality[currentlyExploringDim] - 1;
+		if (nextValue >= GLOB_dimensioncardinality[exploreDimOrder[currentlyExploringDim]]) {
+			nextValue = GLOB_dimensioncardinality[exploreDimOrder[currentlyExploringDim]] - 1;
 			currentDimDone = true;
 		}
 
@@ -180,9 +185,11 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 
 		// Fill in remaining independent params with 0.
 		// CHANGE ME
+
+		
 		for (int dim = (currentlyExploringDim + 1);
 				dim < (NUM_DIMS - NUM_DIMS_DEPENDENT); ++dim) {
-			ss << "0 ";
+			ss << extractConfigPararm(bestConfig, dim) << " ";
 		}
 		
 		//
@@ -197,10 +204,12 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 
 		// Configuration is ready now.
 		nextconfiguration = ss.str();
+		start++;
 
 		// Make sure we start exploring next dimension in next iteration.
 		// CHANGE ME
 		if (currentDimDone) {
+			start = 0;
 			currentlyExploringDim++;
 			currentDimDone = false;
 		}

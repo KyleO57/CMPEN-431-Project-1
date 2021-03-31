@@ -42,7 +42,7 @@ int start = 0;
  */
 std::string generateCacheLatencyParams(string halfBackedConfig) {
 
-	/*
+	
 	std::stringstream latencySettings;
 	
 	int dlone_lat;
@@ -61,17 +61,18 @@ std::string generateCacheLatencyParams(string halfBackedConfig) {
 	ilone_lat = (int)log2((ilone/1024))+ilone_asso;
 	ultwo_lat = (int)log2((ultwo/1024))+ultwo_asso;
 	
-	latencySettings << dlone_lat<< " " <<ilone_lat << " " << ultwo_lat;
-	*/
+	latencySettings << dlone_lat << " " <<ilone_lat << " " << ultwo_lat;
+	printf("\n%s\n",latencySettings.str());
+	
 	
 	//This is a dumb implementation.
-	string latencySettings = "1 1 1";
+	//string latencySettings = "1 1 1";
 	
 	//
 	//YOUR CODE ENDS HERE
 	//
-	return latencySettings;
-	//return latencySettings.str();
+	//return latencySettings;
+	return latencySettings.str();
 }
 
 /*
@@ -144,7 +145,6 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 	
 	std::string nextconfiguration = currentconfiguration;
 	//printf("\n%s\n",currentconfiguration.c_str());
-	printf("\n%u\n", exploreDimOrder[currentlyExploringDim]);
 	// Continue if proposed configuration is invalid or has been seen/checked before.
 	while (!validateConfiguration(nextconfiguration) ||
 		GLOB_seen_configurations[nextconfiguration]) {
@@ -188,7 +188,7 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 			nextValue = GLOB_dimensioncardinality[exploreDimOrder[currentlyExploringDim]] - 1;
 			currentDimDone = true;
 		}
-		printf("\n%u\n", nextValue);
+		
 		ss << nextValue << " ";
 
 		// Fill in remaining independent params with 0.

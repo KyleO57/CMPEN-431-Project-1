@@ -57,9 +57,9 @@ std::string generateCacheLatencyParams(string halfBackedConfig) {
 	unsigned int ilone = getil1size(halfBackedConfig);
 	unsigned int ultwo = getl2size(halfBackedConfig);
 
-	dlone_lat = (int)log2((dlone/1024))+dlone_asso;
-	ilone_lat = (int)log2((ilone/1024))+ilone_asso;
-	ultwo_lat = (int)log2((ultwo/1024))+ultwo_asso;
+	dlone_lat = (int)log2((dlone/1024))-1+dlone_asso;
+	ilone_lat = (int)log2((ilone/1024))-1+ilone_asso;
+	ultwo_lat = (int)log2((ultwo/1024))-5+ultwo_asso;
 	
 	latencySettings << dlone_lat << " " <<ilone_lat << " " << ultwo_lat;
 	cout << latencySettings.str();

@@ -144,7 +144,7 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 	// Continue if proposed configuration is invalid or has been seen/checked before.
 	while (!validateConfiguration(nextconfiguration) ||
 		GLOB_seen_configurations[nextconfiguration]) {
-
+		
 		// Check if DSE has been completed before and return current
 		// configuration.
 		if(isDSEComplete) {
@@ -163,7 +163,7 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 		// Fill in the dimensions already-scanned with the already-selected best
 		// value.
 		// CHANGE ME
-		
+		printf("\n\nhere1\n\n");
 		for (int dim = 0; dim < exploreDimOrder[currentlyExploringDim]; ++dim) {
 			ss << extractConfigPararm(bestConfig, dim) << " ";
 		}
@@ -180,6 +180,7 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 				exploreDimOrder[currentlyExploringDim]) + 1;
 		}
 		// CHANGE ME
+		printf("\n\nhere2\n\n");
 		if (nextValue >= GLOB_dimensioncardinality[exploreDimOrder[currentlyExploringDim]]) {
 			nextValue = GLOB_dimensioncardinality[exploreDimOrder[currentlyExploringDim]] - 1;
 			currentDimDone = true;
@@ -190,7 +191,7 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 		// Fill in remaining independent params with 0.
 		// CHANGE ME
 
-		
+		printf("\n\nhere3\n\n");
 		for (int dim = (currentlyExploringDim + 1);
 				dim < (NUM_DIMS - NUM_DIMS_DEPENDENT); ++dim) {
 			ss << extractConfigPararm(bestConfig, dim) << " ";

@@ -148,6 +148,7 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 		// Check if DSE has been completed before and return current
 		// configuration.
 		if(isDSEComplete) {
+			printf("\n\nyert\n\n");
 			return currentconfiguration;
 		}
 

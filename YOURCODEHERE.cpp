@@ -223,7 +223,7 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 		// CHANGE ME
 		if (currentlyExploringDim == (NUM_DIMS - NUM_DIMS_DEPENDENT))
 			isDSEComplete = true;
-		
+		printf("\n\nhere4\n\n");
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	}
 	printf("\n%s\n\n", nextconfiguration.c_str());

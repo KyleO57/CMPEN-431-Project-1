@@ -92,31 +92,31 @@ int validateConfiguration(std::string configuration) {
 	
 	// Conditional 1 in section 8.3
 	if (ilone_bsize < ifq){
-		printf("\nifq: %u\n", ifq);
-		printf("\nil1: %u\n", ilone_bsize);
+		//printf("\nifq: %u\n", ifq);
+		//printf("\nil1: %u\n", ilone_bsize);
 		return 0;
 	}
 	// Conditional 2 in section 8.3
 	if (ultwo_bsize < ilone_bsize * 2 || ultwo_bsize > 128){
-		printf("2");
+		//printf("2");
 		return 0;
 	}
 	if (ultwo < 2 *(dlone + ilone)){
-		printf("3");
+		//printf("3");
 		return 0;
 	}
 	// Conditional 3 in section 8.3
 	if (dlone < 2048 || dlone > 65536){
-		printf("4");
+		//printf("4");
 		return 0;
 	}
 	if (ilone < 2048 || ilone > 65536){
-		printf("5");
+		//printf("5");
 		return 0;
 	}
 	// Conditional 4 in section 8.3
 	if (ultwo < (32 * 1024) || ultwo > (1024 * 1024)){
-		printf("6");
+		//printf("6");
 		return 0;
 	}
 	// might not be valid
@@ -153,6 +153,7 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 	std::string nextconfiguration = currentconfiguration;
 	//printf("\n%s\n",currentconfiguration.c_str());
 	// Continue if proposed configuration is invalid or has been seen/checked before.
+	printf("\nDimesion: %u\n", exploreDimOrder[currentlyExploringDim]);
 	while (!validateConfiguration(nextconfiguration) ||
 		GLOB_seen_configurations[nextconfiguration]) {
 		

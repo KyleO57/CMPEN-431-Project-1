@@ -227,6 +227,7 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	}
 	printf("\n%s\n\n", nextconfiguration.c_str());
+	printf("\n\nhere5\n\n");
 	return nextconfiguration;
 }
 

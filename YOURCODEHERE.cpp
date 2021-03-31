@@ -31,6 +31,7 @@ using namespace std;
 unsigned int currentlyExploringDim = 0;
 bool currentDimDone = false;
 bool isDSEComplete = false;
+//sbt you added these variables ^^ right? 
 
 /*
  * Given a half-baked configuration containing cache properties, generate
@@ -62,7 +63,10 @@ std::string generateCacheLatencyParams(string halfBackedConfig) {
  */
 int validateConfiguration(std::string configuration) {
 	
-	unsigned int ifq = extractConfigPararm(configuration, 0);
+	unsigned int ifq = extractConfigPararm(configuration, 0); //ifq is width
+
+	//sbt5 add here --why unsigned?
+
 	unsigned int dlone = getdl1size(configuration);
 	unsigned int ilone = getil1size(configuration);
 	unsigned int ultwo = getl2size(configuration);
@@ -70,7 +74,12 @@ int validateConfiguration(std::string configuration) {
 	
 	
 	// Conditional 1 in section 8.3
-	if (ilone < ifq){
+	//sbt add * 8
+	if (ilone < ifq * 8){
+		return 0;
+	}
+	//sbt add dl1 should have the same block size as il1 
+	if (ilone != dlone){
 		return 0;
 	}
 	// Conditional 2 in section 8.3
@@ -78,7 +87,10 @@ int validateConfiguration(std::string configuration) {
 		return 0;
 	}
 	// Conditional 3 in section 8.3
-	
+	//sbt add here-note converstion from byte to KB (do we need to do something else?)
+	if (ilone < 2 || ilone > 64){
+		return 0;
+	}
 	// Conditional 4 in section 8.3
 	
 	// The below is a necessary, but insufficient condition for validating a

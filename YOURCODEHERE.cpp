@@ -61,8 +61,12 @@ std::string generateCacheLatencyParams(string halfBackedConfig) {
  * Returns 1 if configuration is valid, else 0
  */
 int validateConfiguration(std::string configuration) {
-	
-	unsigned int ifq = extractConfigPararm(configuration, 0);
+	// ifq size in bytes
+	unsigned int ifq = 8 * (extractConfigPararm(configuration, 0) + 1);
+	// il1 and ul2 BLOCK size in bytes
+	unsigned int ilone_bsize = extractConfigPararm(configuration, 2);
+	unsigned int ultwo_bsize = extractConfigPararm(configuration, 8);
+	// il1 and ul2 size in bytes
 	unsigned int dlone = getdl1size(configuration);
 	unsigned int ilone = getil1size(configuration);
 	unsigned int ultwo = getl2size(configuration);
@@ -70,17 +74,26 @@ int validateConfiguration(std::string configuration) {
 	
 	
 	// Conditional 1 in section 8.3
-	if (ilone < ifq){
+	if (ilone_bsize < ifq){
 		return 0;
 	}
 	// Conditional 2 in section 8.3
-	if (ultwo < ilone + 1){
+	if (ultwo_bsize < ilone_bsize * 2 || ultwo_bsize > 128){
 		return 0;
 	}
 	// Conditional 3 in section 8.3
-	
+	if (dlone < 2048 || dlone > 65536){
+		return 0;
+	}
+	if (ilone < 2048 || ilone > 65536){
+		return 0;
+	}
 	// Conditional 4 in section 8.3
-	
+	if (ultwo < (32 * 1024) || ultwo > (1000 * 1024)){
+		return 0;
+	}
+	// might not be valid
+	return 1;
 	// The below is a necessary, but insufficient condition for validating a
 	// configuration.
 	return isNumDimConfiguration(configuration);

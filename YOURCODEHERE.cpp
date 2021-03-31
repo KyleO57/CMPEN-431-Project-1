@@ -42,7 +42,9 @@ int start = 0;
  */
 std::string generateCacheLatencyParams(string halfBackedConfig) {
 
+	/*
 	std::stringstream latencySettings;
+	
 	int dlone_lat;
 	int ilone_lat;
 	int ultwo_lat;
@@ -60,15 +62,16 @@ std::string generateCacheLatencyParams(string halfBackedConfig) {
 	ultwo_lat = (int)log2((ultwo/1024))+ultwo_asso;
 	
 	latencySettings << dlone_lat<< " " <<ilone_lat << " " << ultwo_lat;
-	/*
-	This is a dumb implementation.
-	latencySettings = "1 1 1";
 	*/
+	
+	//This is a dumb implementation.
+	string latencySettings = "1 1 1";
+	
 	//
 	//YOUR CODE ENDS HERE
 	//
-
-	return latencySettings.str();
+	return latencySettings;
+	//return latencySettings.str();
 }
 
 /*

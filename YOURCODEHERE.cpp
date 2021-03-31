@@ -40,10 +40,10 @@ bool isDSEComplete = false;
  */
 std::string generateCacheLatencyParams(string halfBackedConfig) {
 
-	string latencySettings;
-	std::string dlone_lat;
-	std::string ilone_lat;
-	std::string ultwo_lat;
+	std::stringstream latencySettings;
+	int dlone_lat;
+	int ilone_lat;
+	int ultwo_lat;
 
 	int dlone_asso = extractConfigPararm(halfBackedConfig, 4);
 	int ilone_asso = extractConfigPararm(halfBackedConfig, 6);
@@ -53,11 +53,11 @@ std::string generateCacheLatencyParams(string halfBackedConfig) {
 	unsigned int ilone = getil1size(halfBackedConfig);
 	unsigned int ultwo = getl2size(halfBackedConfig);
 
-	dlone_lat = std::to_string((int)log2((dlone/1024))+dlone_asso);
-	ilone_lat = std::to_string((int)log2((ilone/1024))+ilone_asso);
-	ultwo_lat = std::to_string((int)log2((ultwo/1024))+ultwo_asso);
+	dlone_lat = (int)log2((dlone/1024))+dlone_asso;
+	ilone_lat = (int)log2((ilone/1024))+ilone_asso;
+	ultwo_lat = (int)log2((ultwo/1024))+ultwo_asso;
 	
-	latencySettings = (dlone_lat + " " + ilone_lat + " " + ultwo_lat);
+	latencySettings << dlone_lat<< " " <<ilone_lat << " " << ultwo_lat;
 	/*
 	This is a dumb implementation.
 	latencySettings = "1 1 1";
@@ -66,7 +66,7 @@ std::string generateCacheLatencyParams(string halfBackedConfig) {
 	//YOUR CODE ENDS HERE
 	//
 
-	return latencySettings;
+	return latencySettings.str();
 }
 
 /*

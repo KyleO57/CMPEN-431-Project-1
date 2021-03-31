@@ -92,7 +92,8 @@ int validateConfiguration(std::string configuration) {
 	
 	// Conditional 1 in section 8.3
 	if (ilone_bsize < ifq){
-		printf("1");
+		printf("\nifq: %u\n", ifq);
+		printf("\nil1: %u\n", ilone_bsize);
 		return 0;
 	}
 	// Conditional 2 in section 8.3

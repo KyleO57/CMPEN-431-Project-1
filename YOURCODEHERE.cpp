@@ -62,7 +62,7 @@ std::string generateCacheLatencyParams(string halfBackedConfig) {
 	ultwo_lat = (int)log2((ultwo/1024))+ultwo_asso;
 	
 	latencySettings << dlone_lat << " " <<ilone_lat << " " << ultwo_lat;
-	printf("\n%s\n",latencySettings.str());
+	cout << latencySettings.str();
 	
 	
 	//This is a dumb implementation.

@@ -88,11 +88,21 @@ int validateConfiguration(std::string configuration) {
 	}
 	// Conditional 3 in section 8.3
 	//sbt add here-note converstion from byte to KB (do we need to do something else?)
-	if (ilone < 2 || ilone > 64){
+	if (ilone < 2000 || ilone > 64000){
 		return 0;
 	}
+	if (dlone < 2000 || dlone > 64000){
+		return 0; 
+	}
 	// Conditional 4 in section 8.3
-	
+	if (ultwo < 32000 || ultwo > 1000000){
+		return 0;
+	}
+	//Conditional 5 in section 8.3 
+
+	//Conditional 6 in section 8.3 
+
+
 	// The below is a necessary, but insufficient condition for validating a
 	// configuration.
 	return isNumDimConfiguration(configuration);

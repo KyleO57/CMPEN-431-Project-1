@@ -79,7 +79,7 @@ std::string generateCacheLatencyParams(string halfBackedConfig) {
  * Returns 1 if configuration is valid, else 0
  */
 int validateConfiguration(std::string configuration) {
-	/*
+	
 	// ifq size in bytes
 	unsigned int ifq = 8 * (extractConfigPararm(configuration, 0) + 1);
 	// il1 and ul2 BLOCK size in bytes
@@ -116,8 +116,8 @@ int validateConfiguration(std::string configuration) {
 	return 1;
 	// The below is a necessary, but insufficient condition for validating a
 	// configuration.
-	*/
-	return isNumDimConfiguration(configuration);
+	
+	//return isNumDimConfiguration(configuration);
 }
 
 /*

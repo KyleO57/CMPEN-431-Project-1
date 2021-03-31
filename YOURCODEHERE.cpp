@@ -91,11 +91,13 @@ int validateConfiguration(std::string configuration) {
 	unsigned int ultwo = getl2size(configuration);
 	
 	// Conditional 1 in section 8.3
+	/*
 	if (ilone_bsize < ifq){
 		//printf("\nifq: %u\n", ifq);
 		//printf("\nil1: %u\n", ilone_bsize);
 		return 0;
 	}
+	*/
 	// Conditional 2 in section 8.3
 	if (ultwo_bsize < ilone_bsize * 2 || ultwo_bsize > 128){
 		//printf("2");

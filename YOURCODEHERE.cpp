@@ -83,8 +83,8 @@ int validateConfiguration(std::string configuration) {
 	// ifq size in bytes
 	unsigned int ifq = 8 * (2^extractConfigPararm(configuration, 0));
 	// il1 and ul2 BLOCK size in bytes
-	unsigned int ilone_bsize = extractConfigPararm(configuration, 2);
-	unsigned int ultwo_bsize = extractConfigPararm(configuration, 8);
+	unsigned int ilone_bsize = (2^(3+extractConfigPararm(configuration, 2)));
+	unsigned int ultwo_bsize = (2^(4+extractConfigPararm(configuration, 8)));
 	// il1 and ul2 size in bytes
 	unsigned int dlone = getdl1size(configuration);
 	unsigned int ilone = getil1size(configuration);

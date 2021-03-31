@@ -161,12 +161,14 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 		// Fill in the dimensions already-scanned with the already-selected best
 		// value.
 		// CHANGE ME
+		printf("\nhere1\n");
 		for (int dim = 0; dim < exploreDimOrder[currentlyExploringDim]; ++dim) {
 			ss << extractConfigPararm(bestConfig, dim) << " ";
 		}
 
 		// Handling for currently exploring dimension. This is a very dumb
 		// implementation.
+		printf("\nhere2\n");
 		int nextValue;
 		if (start == 0){
 			nextValue = 0;
@@ -186,7 +188,7 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 		// Fill in remaining independent params with 0.
 		// CHANGE ME
 
-		
+		printf("\nhere3\n");
 		for (int dim = (currentlyExploringDim + 1);
 				dim < (NUM_DIMS - NUM_DIMS_DEPENDENT); ++dim) {
 			ss << extractConfigPararm(bestConfig, dim) << " ";

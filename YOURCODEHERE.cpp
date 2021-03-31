@@ -62,7 +62,7 @@ std::string generateCacheLatencyParams(string halfBackedConfig) {
 	ultwo_lat = (int)log2((ultwo/1024))-5+ultwo_asso;
 	
 	latencySettings << dlone_lat << " " <<ilone_lat << " " << ultwo_lat;
-	cout << latencySettings.str();
+	//cout << latencySettings.str();
 	
 	
 	//This is a dumb implementation.
@@ -92,24 +92,30 @@ int validateConfiguration(std::string configuration) {
 	
 	// Conditional 1 in section 8.3
 	if (ilone_bsize < ifq){
+		printf("1");
 		return 0;
 	}
 	// Conditional 2 in section 8.3
 	if (ultwo_bsize < ilone_bsize * 2 || ultwo_bsize > 128){
+		printf("2");
 		return 0;
 	}
 	if (ultwo < 2 *(dlone + ilone)){
+		printf("3");
 		return 0;
 	}
 	// Conditional 3 in section 8.3
 	if (dlone < 2048 || dlone > 65536){
+		printf("4");
 		return 0;
 	}
 	if (ilone < 2048 || ilone > 65536){
+		printf("5");
 		return 0;
 	}
 	// Conditional 4 in section 8.3
 	if (ultwo < (32 * 1024) || ultwo > (1024 * 1024)){
+		printf("6");
 		return 0;
 	}
 	// might not be valid

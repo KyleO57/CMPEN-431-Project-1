@@ -93,6 +93,9 @@ int validateConfiguration(std::string configuration) {
 	if (ultwo_bsize < ilone_bsize * 2 || ultwo_bsize > 128){
 		return 0;
 	}
+	if (ultwo < 2 *(dlone + ilone)){
+		return 0;
+	}
 	// Conditional 3 in section 8.3
 	if (dlone < 2048 || dlone > 65536){
 		return 0;

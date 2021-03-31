@@ -45,13 +45,17 @@ std::string generateCacheLatencyParams(string halfBackedConfig) {
 	string ilone_lat;
 	string ultwo_lat;
 
+	int dlone_asso = extractConfigPararm(halfBackedConfig, 4);
+	int ilone_asso = extractConfigPararm(halfBackedConfig, 6);
+	int ultwo_asso = extractConfigPararm(halfBackedConfig, 9);
+
 	unsigned int dlone = getdl1size(halfBackedConfig);
 	unsigned int ilone = getil1size(halfBackedConfig);
 	unsigned int ultwo = getl2size(halfBackedConfig);
 
-	dlone_lat = to_string((int)log2((dlone/1024)));
-	ilone_lat = to_string((int)log2((ilone/1024)));
-	ultwo_lat = to_string((int)log2((ultwo/1024)));
+	dlone_lat = to_string((int)log2((dlone/1024))+dlone_asso);
+	ilone_lat = to_string((int)log2((ilone/1024))+ilone_asso);
+	ultwo_lat = to_string((int)log2((ultwo/1024))+ultwo_asso);
 	
 	latencySettings = (dlone_lat + " " + ilone_lat + " " + ultwo_lat);
 	/*
@@ -150,9 +154,10 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 
 		if (optimizeforEDP == 1)
 			bestConfig = bestEDPconfiguration;
-
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		// Fill in the dimensions already-scanned with the already-selected best
 		// value.
+		// CHANGE ME
 		for (int dim = 0; dim < currentlyExploringDim; ++dim) {
 			ss << extractConfigPararm(bestConfig, dim) << " ";
 		}
@@ -162,6 +167,7 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 		int nextValue = extractConfigPararm(nextconfiguration,
 				currentlyExploringDim) + 1;
 
+		// CHANGE ME
 		if (nextValue >= GLOB_dimensioncardinality[currentlyExploringDim]) {
 			nextValue = GLOB_dimensioncardinality[currentlyExploringDim] - 1;
 			currentDimDone = true;
@@ -170,11 +176,12 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 		ss << nextValue << " ";
 
 		// Fill in remaining independent params with 0.
+		// CHANGE ME
 		for (int dim = (currentlyExploringDim + 1);
 				dim < (NUM_DIMS - NUM_DIMS_DEPENDENT); ++dim) {
 			ss << "0 ";
 		}
-
+		
 		//
 		// Last NUM_DIMS_DEPENDENT3 configuration parameters are not independent.
 		// They depend on one or more parameters already set. Determine the
@@ -189,14 +196,18 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 		nextconfiguration = ss.str();
 
 		// Make sure we start exploring next dimension in next iteration.
+		// CHANGE ME
 		if (currentDimDone) {
 			currentlyExploringDim++;
 			currentDimDone = false;
 		}
 
 		// Signal that DSE is complete after this configuration.
+		// CHANGE ME
 		if (currentlyExploringDim == (NUM_DIMS - NUM_DIMS_DEPENDENT))
 			isDSEComplete = true;
+		
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	}
 	return nextconfiguration;
 }

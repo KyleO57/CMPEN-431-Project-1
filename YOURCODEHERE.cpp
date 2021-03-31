@@ -49,9 +49,9 @@ std::string generateCacheLatencyParams(string halfBackedConfig) {
 	unsigned int ilone = getil1size(halfBackedConfig);
 	unsigned int ultwo = getl2size(halfBackedConfig);
 
-	dlone_lat = to_string((int)sqrt((dlone/1024)));
-	ilone_lat = to_string((int)sqrt((ilone/1024)));
-	ultwo_lat = to_string((int)sqrt((ultwo/1024)));
+	dlone_lat = to_string((int)log2((dlone/1024)));
+	ilone_lat = to_string((int)log2((ilone/1024)));
+	ultwo_lat = to_string((int)log2((ultwo/1024)));
 	
 	latencySettings = (dlone_lat + " " + ilone_lat + " " + ultwo_lat);
 	/*
@@ -97,7 +97,7 @@ int validateConfiguration(std::string configuration) {
 		return 0;
 	}
 	// Conditional 4 in section 8.3
-	if (ultwo < (32 * 1024) || ultwo > (1000 * 1024)){
+	if (ultwo < (32 * 1024) || ultwo > (1024 * 1024)){
 		return 0;
 	}
 	// might not be valid

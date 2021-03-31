@@ -12,7 +12,6 @@
 #include <fcntl.h>
 #include <vector>
 #include <iterator>
-
 #include "431project.h"
 
 using namespace std;

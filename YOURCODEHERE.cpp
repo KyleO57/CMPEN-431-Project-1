@@ -41,9 +41,9 @@ bool isDSEComplete = false;
 std::string generateCacheLatencyParams(string halfBackedConfig) {
 
 	string latencySettings;
-	string dlone_lat;
-	string ilone_lat;
-	string ultwo_lat;
+	std::string dlone_lat;
+	std::string ilone_lat;
+	std::string ultwo_lat;
 
 	int dlone_asso = extractConfigPararm(halfBackedConfig, 4);
 	int ilone_asso = extractConfigPararm(halfBackedConfig, 6);

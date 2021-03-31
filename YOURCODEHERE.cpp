@@ -81,7 +81,7 @@ std::string generateCacheLatencyParams(string halfBackedConfig) {
 int validateConfiguration(std::string configuration) {
 	
 	// ifq size in bytes
-	unsigned int ifq = 8 * (2^extractConfigPararm(configuration, 0));
+	unsigned int ifq = 8 *pow(2,extractConfigPararm(configuration, 0));
 	// il1 and ul2 BLOCK size in bytes
 	unsigned int ilone_bsize = pow(2, 3+extractConfigPararm(configuration, 2));
 	unsigned int ultwo_bsize = pow(2, 4+extractConfigPararm(configuration, 8));
@@ -91,10 +91,10 @@ int validateConfiguration(std::string configuration) {
 	unsigned int ultwo = getl2size(configuration);
 	
 	// Conditional 1 in section 8.3
-	/*
+	
 	if (ilone_bsize < ifq){
-		//printf("\nifq: %u\n", ifq);
-		//printf("\nil1: %u\n", ilone_bsize);
+		printf("\nifq: %u\n", ifq);
+		printf("\nil1: %u\n", ilone_bsize);
 		return 0;
 	}
 	
@@ -103,7 +103,7 @@ int validateConfiguration(std::string configuration) {
 		//printf("2");
 		return 0;
 	}
-	*/
+	
 	if (ultwo < 2 *(dlone + ilone)){
 		//printf("3");
 		return 0;

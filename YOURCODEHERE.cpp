@@ -62,16 +62,7 @@ std::string generateCacheLatencyParams(string halfBackedConfig) {
 	ultwo_lat = (int)log2((ultwo/1024))-5+ultwo_asso;
 	
 	latencySettings << dlone_lat << " " <<ilone_lat << " " << ultwo_lat;
-	//cout << latencySettings.str();
 	
-	
-	//This is a dumb implementation.
-	//string latencySettings = "1 1 1";
-	
-	//
-	//YOUR CODE ENDS HERE
-	//
-	//return latencySettings;
 	return latencySettings.str();
 }
 
@@ -93,41 +84,30 @@ int validateConfiguration(std::string configuration) {
 	// Conditional 1 in section 8.3
 	
 	if (ilone_bsize < ifq){
-		printf("\nifq: %u\n", ifq);
-		printf("\nil1: %u\n", ilone_bsize);
 		return 0;
 	}
 	
 	// Conditional 2 in section 8.3
 	if (ultwo_bsize < ilone_bsize * 2 || ultwo_bsize > 128){
-		//printf("2");
 		return 0;
 	}
 	
 	if (ultwo < 2 *(dlone + ilone)){
-		//printf("3");
 		return 0;
 	}
 	// Conditional 3 in section 8.3
 	if (dlone < 2048 || dlone > 65536){
-		//printf("4");
 		return 0;
 	}
 	if (ilone < 2048 || ilone > 65536){
-		//printf("5");
 		return 0;
 	}
 	// Conditional 4 in section 8.3
 	if (ultwo < (32 * 1024) || ultwo > (1024 * 1024)){
-		//printf("6");
 		return 0;
 	}
-	// might not be valid
-	return 1;
-	// The below is a necessary, but insufficient condition for validating a
-	// configuration.
 	
-	//return isNumDimConfiguration(configuration);
+	return 1;
 }
 
 /*
@@ -154,8 +134,6 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 	// 5. GLOB_seen_configurations
 	
 	std::string nextconfiguration = currentconfiguration;
-	//printf("\n%s\n",currentconfiguration.c_str());
-	// Continue if proposed configuration is invalid or has been seen/checked before.
 	
 	while (!validateConfiguration(nextconfiguration) ||
 		GLOB_seen_configurations[nextconfiguration]) {
@@ -174,10 +152,9 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 
 		if (optimizeforEDP == 1)
 			bestConfig = bestEDPconfiguration;
-		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		
 		// Fill in the dimensions already-scanned with the already-selected best
 		// value.
-		// CHANGE ME
 		for (int dim = 0; dim < exploreDimOrder[currentlyExploringDim]; ++dim) {
 			ss << extractConfigPararm(bestConfig, dim) << " ";
 		}
@@ -193,7 +170,7 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 			nextValue = extractConfigPararm(nextconfiguration,
 				exploreDimOrder[currentlyExploringDim]) + 1;
 		}
-		// CHANGE ME
+		
 		
 		if (nextValue >= GLOB_dimensioncardinality[exploreDimOrder[currentlyExploringDim]]) {
 			nextValue = GLOB_dimensioncardinality[exploreDimOrder[currentlyExploringDim]] - 1;
@@ -203,8 +180,6 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 		ss << nextValue << " ";
 
 		// Fill in remaining independent params with 0.
-		// CHANGE ME
-
 		
 		for (int dim = (exploreDimOrder[currentlyExploringDim] + 1);
 				dim < (NUM_DIMS - NUM_DIMS_DEPENDENT); ++dim) {
@@ -226,7 +201,7 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 		start++;
 
 		// Make sure we start exploring next dimension in next iteration.
-		// CHANGE ME
+		
 		if (currentDimDone) {
 			start = 0;
 			currentlyExploringDim++;
@@ -234,11 +209,10 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 		}
 
 		// Signal that DSE is complete after this configuration.
-		// CHANGE ME
+		
 		if (currentlyExploringDim == (NUM_DIMS - NUM_DIMS_DEPENDENT))
 			isDSEComplete = true;
 		
-		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	}
 	printf("\nDimesion: %u\n", exploreDimOrder[currentlyExploringDim]);
 	return nextconfiguration;

@@ -214,7 +214,7 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 			isDSEComplete = true;
 		
 	}
-	printf("\nDimesion: %u\n", exploreDimOrder[currentlyExploringDim]);
+	
 	return nextconfiguration;
 }
 

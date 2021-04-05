@@ -27,11 +27,13 @@ using namespace std;
  * Feel free to create more global variables to track progress of your
  * heuristic.
  */
+int round_count = 0;
 unsigned int currentlyExploringDim = 0;
 bool currentDimDone = false;
 bool isDSEComplete = false;
 int exploreDimOrder[NUM_DIMS - NUM_DIMS_DEPENDENT] = {11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 1, 12, 13, 14};
 int start = 0;
+
 
 /*
  * Given a half-baked configuration containing cache properties, generate
@@ -207,12 +209,15 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 			currentlyExploringDim++;
 			currentDimDone = false;
 		}
-
+		
 		// Signal that DSE is complete after this configuration.
 		
-		if (currentlyExploringDim == (NUM_DIMS - NUM_DIMS_DEPENDENT))
+		if (currentlyExploringDim == (NUM_DIMS - NUM_DIMS_DEPENDENT) && round_count == 0){
+			currentlyExploringDim = 0;
+			round_count++;
+		}
+		if (currentlyExploringDim == (NUM_DIMS - NUM_DIMS_DEPENDENT) && round_count != 0)
 			isDSEComplete = true;
-		
 	}
 	
 	return nextconfiguration;

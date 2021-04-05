@@ -1,0 +1,213 @@
+Testing baseline: Iter # 0 config: 0 0 0 5 0 5 0 2 2 2 0 1 0 1 2 2 2 5 : found in file
+Starting DSE
+
+Iter # 0 config: 0 0 0 5 0 5 0 2 2 2 0 0 0 1 2 2 2 5 : found in file
+             proposedGeoEDP=1.30307e-07, bestEDP=1.30307e-07, proposedGeoTime=0.000373001, bestTime=0.000373001
+
+Iter # 1 config: 0 0 0 5 0 5 0 2 2 2 0 2 0 1 2 2 2 5 : found in file
+             proposedGeoEDP=1.61463e-07, bestEDP=1.30307e-07, proposedGeoTime=0.000426286, bestTime=0.000373001
+
+Iter # 2 config: 0 0 0 5 0 5 0 2 2 2 0 3 0 1 2 2 2 5 : found in file
+             proposedGeoEDP=2.07804e-07, bestEDP=1.30307e-07, proposedGeoTime=0.000497334, bestTime=0.000373001
+
+Iter # 3 config: 0 0 1 5 0 5 0 2 2 2 0 0 0 1 2 3 3 5 : found in file
+             proposedGeoEDP=9.04831e-08, bestEDP=9.04831e-08, proposedGeoTime=0.000309825, bestTime=0.000309825
+
+Iter # 4 config: 0 0 2 5 0 5 0 2 2 2 0 0 0 1 2 4 4 5 : found in file
+             proposedGeoEDP=8.17209e-08, bestEDP=8.17209e-08, proposedGeoTime=0.00028732, bestTime=0.00028732
+
+Iter # 5 config: 0 0 2 1 0 5 0 2 2 2 0 0 0 1 2 0 4 5 : found in file
+             proposedGeoEDP=7.22682e-08, bestEDP=7.22682e-08, proposedGeoTime=0.000270042, bestTime=0.000270042
+
+Iter # 6 config: 0 0 2 2 0 5 0 2 2 2 0 0 0 1 2 1 4 5 : found in file
+             proposedGeoEDP=7.07769e-08, bestEDP=7.07769e-08, proposedGeoTime=0.000267815, bestTime=0.000267815
+
+Iter # 7 config: 0 0 2 3 0 5 0 2 2 2 0 0 0 1 2 2 4 5 : found in file
+             proposedGeoEDP=7.19309e-08, bestEDP=7.07769e-08, proposedGeoTime=0.00027075, bestTime=0.000267815
+
+Iter # 8 config: 0 0 2 4 0 5 0 2 2 2 0 0 0 1 2 3 4 5 : found in file
+             proposedGeoEDP=7.63144e-08, bestEDP=7.07769e-08, proposedGeoTime=0.000278737, bestTime=0.000267815
+
+Iter # 9 config: 0 0 2 6 0 5 0 2 2 2 0 0 0 1 2 5 4 5 : found in file
+             proposedGeoEDP=8.78387e-08, bestEDP=7.07769e-08, proposedGeoTime=0.000295844, bestTime=0.000267815
+
+Iter # 10 config: 0 0 2 2 1 5 0 2 2 2 0 0 0 1 2 3 4 5 : found in file
+             proposedGeoEDP=7.52339e-08, bestEDP=7.07769e-08, proposedGeoTime=0.000278556, bestTime=0.000267815
+
+Iter # 11 config: 0 0 2 2 2 5 0 2 2 2 0 0 0 1 2 5 4 5 : found in file
+             proposedGeoEDP=8.41082e-08, bestEDP=7.07769e-08, proposedGeoTime=0.000295814, bestTime=0.000267815
+
+Iter # 12 config: 0 0 2 2 0 1 0 2 2 2 0 0 0 1 2 1 0 5 : found in file
+             proposedGeoEDP=1.02371e-07, bestEDP=7.07769e-08, proposedGeoTime=0.000339155, bestTime=0.000267815
+
+Iter # 13 config: 0 0 2 2 0 2 0 2 2 2 0 0 0 1 2 1 1 5 : found in file
+             proposedGeoEDP=9.59283e-08, bestEDP=7.07769e-08, proposedGeoTime=0.000328173, bestTime=0.000267815
+
+Iter # 14 config: 0 0 2 2 0 3 0 2 2 2 0 0 0 1 2 1 2 5 : found in file
+             proposedGeoEDP=8.32024e-08, bestEDP=7.07769e-08, proposedGeoTime=0.00030527, bestTime=0.000267815
+
+Iter # 15 config: 0 0 2 2 0 4 0 2 2 2 0 0 0 1 2 1 3 5 : found in file
+             proposedGeoEDP=7.61354e-08, bestEDP=7.07769e-08, proposedGeoTime=0.000286387, bestTime=0.000267815
+
+Iter # 16 config: 0 0 2 2 0 6 0 2 2 2 0 0 0 1 2 1 5 5 : found in file
+             proposedGeoEDP=7.3544e-08, bestEDP=7.07769e-08, proposedGeoTime=0.000263094, bestTime=0.000263094
+
+Iter # 17 config: 0 0 2 2 0 5 1 2 2 2 0 0 0 1 2 1 6 5 : found in file
+             proposedGeoEDP=7.30759e-08, bestEDP=7.07769e-08, proposedGeoTime=0.000262172, bestTime=0.000262172
+
+Iter # 18 config: 0 0 2 2 0 5 0 1 2 2 0 0 0 1 2 1 4 4 : found in file
+             proposedGeoEDP=7.00213e-08, bestEDP=7.00213e-08, proposedGeoTime=0.000266558, bestTime=0.000262172
+
+Iter # 19 config: 0 0 2 2 0 5 0 3 2 2 0 0 0 1 2 1 4 6 : found in file
+             proposedGeoEDP=7.14513e-08, bestEDP=7.00213e-08, proposedGeoTime=0.000269069, bestTime=0.000262172
+
+Iter # 20 config: 0 0 2 2 0 5 0 4 2 2 0 0 0 1 2 1 4 7 : found in file
+             proposedGeoEDP=7.27489e-08, bestEDP=7.00213e-08, proposedGeoTime=0.000270319, bestTime=0.000262172
+
+Iter # 21 config: 0 0 2 2 0 5 0 1 3 2 0 0 0 1 2 1 4 5 : found in file
+             proposedGeoEDP=6.22705e-08, bestEDP=6.22705e-08, proposedGeoTime=0.000263003, bestTime=0.000262172
+
+Iter # 22 config: 0 0 2 2 0 5 0 1 3 1 0 0 0 1 2 1 4 3 : found in file
+             proposedGeoEDP=6.06987e-08, bestEDP=6.06987e-08, proposedGeoTime=0.000260143, bestTime=0.000260143
+
+Iter # 23 config: 0 0 2 2 0 5 0 1 3 3 0 0 0 1 2 1 4 7 : found in file
+             proposedGeoEDP=6.40464e-08, bestEDP=6.06987e-08, proposedGeoTime=0.000265851, bestTime=0.000260143
+
+Iter # 24 config: 0 0 2 2 0 5 0 1 3 4 0 0 0 1 2 1 4 9 : found in file
+             proposedGeoEDP=6.64202e-08, bestEDP=6.06987e-08, proposedGeoTime=0.000268687, bestTime=0.000260143
+
+Iter # 25 config: 0 0 2 2 0 5 0 1 3 1 1 0 0 1 2 1 4 3 : found in file
+             proposedGeoEDP=6.07145e-08, bestEDP=6.06987e-08, proposedGeoTime=0.000260179, bestTime=0.000260143
+
+Iter # 26 config: 0 0 2 2 0 5 0 1 3 1 2 0 0 1 2 1 4 3 : found in file
+             proposedGeoEDP=6.07676e-08, bestEDP=6.06987e-08, proposedGeoTime=0.000260301, bestTime=0.000260143
+
+Iter # 27 config: 1 0 2 2 0 5 0 1 3 1 0 0 0 1 2 1 4 3 : found in file
+             proposedGeoEDP=7.40374e-08, bestEDP=6.06987e-08, proposedGeoTime=0.000289464, bestTime=0.000260143
+
+Iter # 28 config: 2 0 2 2 0 5 0 1 3 1 0 0 0 1 2 1 4 3 : found in file
+             proposedGeoEDP=9.6193e-08, bestEDP=6.06987e-08, proposedGeoTime=0.000329108, bestTime=0.000260143
+
+Iter # 29 config: 0 1 2 2 0 5 0 1 3 1 0 0 0 1 2 1 4 3 : found in file
+             proposedGeoEDP=6.85254e-08, bestEDP=6.06987e-08, proposedGeoTime=0.000268214, bestTime=0.000260143
+
+Iter # 30 config: 0 0 2 2 0 5 0 1 3 1 0 0 1 1 2 1 4 3 : found in file
+             proposedGeoEDP=3.90102e-08, bestEDP=3.90102e-08, proposedGeoTime=0.000198959, bestTime=0.000198959
+
+Iter # 31 config: 0 0 2 2 0 5 0 1 3 1 0 0 2 1 2 1 4 3 : found in file
+             proposedGeoEDP=3.92885e-08, bestEDP=3.90102e-08, proposedGeoTime=0.000199814, bestTime=0.000198959
+
+Iter # 32 config: 0 0 2 2 0 5 0 1 3 1 0 0 3 1 2 1 4 3 : found in file
+             proposedGeoEDP=4.06934e-08, bestEDP=3.90102e-08, proposedGeoTime=0.000204018, bestTime=0.000198959
+
+Iter # 33 config: 0 0 2 2 0 5 0 1 3 1 0 0 4 1 2 1 4 3 : found in file
+             proposedGeoEDP=3.86062e-08, bestEDP=3.86062e-08, proposedGeoTime=0.000197742, bestTime=0.000197742
+
+Iter # 34 config: 0 0 2 2 0 5 0 1 3 1 0 0 4 0 2 1 4 3 : found in file
+             proposedGeoEDP=3.87737e-08, bestEDP=3.86062e-08, proposedGeoTime=0.000198245, bestTime=0.000197742
+
+Iter # 35 config: 0 0 2 2 0 5 0 1 3 1 0 0 4 2 2 1 4 3 : found in file
+             proposedGeoEDP=3.84832e-08, bestEDP=3.84832e-08, proposedGeoTime=0.00019737, bestTime=0.00019737
+
+Iter # 36 config: 0 0 2 2 0 5 0 1 3 1 0 0 4 3 2 1 4 3 : found in file
+             proposedGeoEDP=3.84011e-08, bestEDP=3.84011e-08, proposedGeoTime=0.000197122, bestTime=0.000197122
+
+Iter # 37 config: 0 0 2 2 0 5 0 1 3 1 0 0 4 3 0 1 4 3 : found in file
+             proposedGeoEDP=3.84011e-08, bestEDP=3.84011e-08, proposedGeoTime=0.000197122, bestTime=0.000197122
+
+Iter # 38 config: 0 0 2 2 0 5 0 1 3 1 0 0 4 3 1 1 4 3 : found in file
+             proposedGeoEDP=3.8403e-08, bestEDP=3.84011e-08, proposedGeoTime=0.000197128, bestTime=0.000197122
+
+Iter # 39 config: 0 0 2 2 0 5 0 1 3 1 0 0 4 3 3 1 4 3 : found in file
+             proposedGeoEDP=3.84031e-08, bestEDP=3.84011e-08, proposedGeoTime=0.000197129, bestTime=0.000197122
+
+Iter # 40 config: 0 0 2 2 0 5 0 1 3 1 0 0 4 3 4 1 4 3 : found in file
+             proposedGeoEDP=3.84602e-08, bestEDP=3.84011e-08, proposedGeoTime=0.000197311, bestTime=0.000197122
+
+Iter # 41 config: 0 0 2 2 0 5 0 1 3 1 0 1 4 3 2 1 4 3 : found in file
+             proposedGeoEDP=4.12598e-08, bestEDP=3.84011e-08, proposedGeoTime=0.000206515, bestTime=0.000197122
+
+Iter # 42 config: 0 0 2 2 0 5 0 1 3 1 0 2 4 3 2 1 4 3 : found in file
+             proposedGeoEDP=4.7254e-08, bestEDP=3.84011e-08, proposedGeoTime=0.00022529, bestTime=0.000197122
+
+Iter # 43 config: 0 0 2 2 0 5 0 1 3 1 0 3 4 3 2 1 4 3 : found in file
+             proposedGeoEDP=6.03667e-08, bestEDP=3.84011e-08, proposedGeoTime=0.000262829, bestTime=0.000197122
+
+Iter # 44 config: 0 0 1 2 0 5 0 1 3 1 0 0 4 3 2 0 3 3 : found in file
+             proposedGeoEDP=4.6193e-08, bestEDP=3.84011e-08, proposedGeoTime=0.000222879, bestTime=0.000197122
+
+Iter # 45 config: 0 0 2 1 0 5 0 1 3 1 0 0 4 3 2 0 4 3 : found in file
+             proposedGeoEDP=3.91324e-08, bestEDP=3.84011e-08, proposedGeoTime=0.000198663, bestTime=0.000197122
+
+Iter # 46 config: 0 0 2 3 0 5 0 1 3 1 0 0 4 3 2 2 4 3 : found in file
+             proposedGeoEDP=3.93538e-08, bestEDP=3.84011e-08, proposedGeoTime=0.000200347, bestTime=0.000197122
+
+Iter # 47 config: 0 0 2 4 0 5 0 1 3 1 0 0 4 3 2 3 4 3 : found in file
+             proposedGeoEDP=4.29062e-08, bestEDP=3.84011e-08, proposedGeoTime=0.000209438, bestTime=0.000197122
+
+Iter # 48 config: 0 0 2 5 0 5 0 1 3 1 0 0 4 3 2 4 4 3 : found in file
+             proposedGeoEDP=4.71864e-08, bestEDP=3.84011e-08, proposedGeoTime=0.000218876, bestTime=0.000197122
+
+Iter # 49 config: 0 0 2 2 1 5 0 1 3 1 0 0 4 3 2 3 4 3 : found in file
+             proposedGeoEDP=4.20611e-08, bestEDP=3.84011e-08, proposedGeoTime=0.000209141, bestTime=0.000197122
+
+Iter # 50 config: 0 0 2 2 2 5 0 1 3 1 0 0 4 3 2 5 4 3 : found in file
+             proposedGeoEDP=4.91815e-08, bestEDP=3.84011e-08, proposedGeoTime=0.000228155, bestTime=0.000197122
+
+Iter # 51 config: 0 0 2 2 0 1 0 1 3 1 0 0 4 3 2 1 0 3 : found in file
+             proposedGeoEDP=5.59643e-08, bestEDP=3.84011e-08, proposedGeoTime=0.000255281, bestTime=0.000197122
+
+Iter # 52 config: 0 0 2 2 0 2 0 1 3 1 0 0 4 3 2 1 1 3 : found in file
+             proposedGeoEDP=5.22175e-08, bestEDP=3.84011e-08, proposedGeoTime=0.000246286, bestTime=0.000197122
+
+Iter # 53 config: 0 0 2 2 0 3 0 1 3 1 0 0 4 3 2 1 2 3 : found in file
+             proposedGeoEDP=4.47839e-08, bestEDP=3.84011e-08, proposedGeoTime=0.00022736, bestTime=0.000197122
+
+Iter # 54 config: 0 0 2 2 0 4 0 1 3 1 0 0 4 3 2 1 3 3 : found in file
+             proposedGeoEDP=4.12225e-08, bestEDP=3.84011e-08, proposedGeoTime=0.000212521, bestTime=0.000197122
+
+Iter # 55 config: 0 0 2 2 0 5 0 2 3 1 0 0 4 3 2 1 4 4 : found in file
+             proposedGeoEDP=3.91482e-08, bestEDP=3.84011e-08, proposedGeoTime=0.000198519, bestTime=0.000197122
+
+Iter # 56 config: 0 0 2 2 0 5 0 3 3 1 0 0 4 3 2 1 4 5 : found in file
+             proposedGeoEDP=3.99962e-08, bestEDP=3.84011e-08, proposedGeoTime=0.0001999, bestTime=0.000197122
+
+Iter # 57 config: 0 0 2 2 0 5 0 4 3 1 0 0 4 3 2 1 4 6 : found in file
+             proposedGeoEDP=4.12527e-08, bestEDP=3.84011e-08, proposedGeoTime=0.000201281, bestTime=0.000197122
+
+Iter # 58 config: 0 0 2 2 0 5 0 1 3 2 0 0 4 3 2 1 4 5 : found in file
+             proposedGeoEDP=3.95815e-08, bestEDP=3.84011e-08, proposedGeoTime=0.0001999, bestTime=0.000197122
+
+Iter # 59 config: 0 0 2 2 0 5 0 1 3 3 0 0 4 3 2 1 4 7 : found in file
+             proposedGeoEDP=4.0879e-08, bestEDP=3.84011e-08, proposedGeoTime=0.000202656, bestTime=0.000197122
+
+Iter # 60 config: 0 0 2 2 0 5 0 1 3 4 0 0 4 3 2 1 4 9 : found in file
+             proposedGeoEDP=4.2605e-08, bestEDP=3.84011e-08, proposedGeoTime=0.000205393, bestTime=0.000197122
+
+Iter # 61 config: 0 0 2 2 0 5 0 1 3 1 1 0 4 3 2 1 4 3 : found in file
+             proposedGeoEDP=3.84185e-08, bestEDP=3.84011e-08, proposedGeoTime=0.000197174, bestTime=0.000197122
+
+Iter # 62 config: 0 0 2 2 0 5 0 1 3 1 2 0 4 3 2 1 4 3 : found in file
+             proposedGeoEDP=3.84678e-08, bestEDP=3.84011e-08, proposedGeoTime=0.000197313, bestTime=0.000197122
+
+Iter # 63 config: 1 0 2 2 0 5 0 1 3 1 0 0 4 3 2 1 4 3 : found in file
+             proposedGeoEDP=4.14119e-08, bestEDP=3.84011e-08, proposedGeoTime=0.000205064, bestTime=0.000197122
+
+Iter # 64 config: 2 0 2 2 0 5 0 1 3 1 0 0 4 3 2 1 4 3 : found in file
+             proposedGeoEDP=5.08004e-08, bestEDP=3.84011e-08, proposedGeoTime=0.000230054, bestTime=0.000197122
+
+Iter # 65 config: 0 1 2 2 0 5 0 1 3 1 0 0 4 3 2 1 4 3 : found in file
+             proposedGeoEDP=4.30627e-08, bestEDP=3.84011e-08, proposedGeoTime=0.000210023, bestTime=0.000197122
+
+Iter # 66 config: 0 0 2 2 0 5 0 1 3 1 0 0 0 3 2 1 4 3 : found in file
+             proposedGeoEDP=6.0699e-08, bestEDP=3.84011e-08, proposedGeoTime=0.000260143, bestTime=0.000197122
+
+Iter # 67 config: 0 0 2 2 0 5 0 1 3 1 0 0 1 3 2 1 4 3 : found in file
+             proposedGeoEDP=3.88053e-08, bestEDP=3.84011e-08, proposedGeoTime=0.000198344, bestTime=0.000197122
+
+Iter # 68 config: 0 0 2 2 0 5 0 1 3 1 0 0 2 3 2 1 4 3 : found in file
+             proposedGeoEDP=3.90854e-08, bestEDP=3.84011e-08, proposedGeoTime=0.000199208, bestTime=0.000197122
+
+Iter # 69 config: 0 0 2 2 0 5 0 1 3 1 0 0 3 3 2 1 4 3 : found in file
+             proposedGeoEDP=4.04925e-08, bestEDP=3.84011e-08, proposedGeoTime=0.000203431, bestTime=0.000197122
+

@@ -51,6 +51,7 @@ std::string generateCacheLatencyParams(string halfBackedConfig) {
 	int ilone_lat;
 	int ultwo_lat;
 
+	// Getting value for associativity and size of caches
 	int dlone_asso = extractConfigPararm(halfBackedConfig, 4);
 	int ilone_asso = extractConfigPararm(halfBackedConfig, 6);
 	int ultwo_asso = extractConfigPararm(halfBackedConfig, 9);
@@ -59,6 +60,7 @@ std::string generateCacheLatencyParams(string halfBackedConfig) {
 	unsigned int ilone = getil1size(halfBackedConfig);
 	unsigned int ultwo = getl2size(halfBackedConfig);
 
+	// Getting latency value based on size then adding associativity
 	dlone_lat = (int)log2((dlone/1024))-1+dlone_asso;
 	ilone_lat = (int)log2((ilone/1024))-1+ilone_asso;
 	ultwo_lat = (int)log2((ultwo/1024))-5+ultwo_asso;
@@ -75,16 +77,17 @@ int validateConfiguration(std::string configuration) {
 	
 	// ifq size in bytes
 	unsigned int ifq = 8 *pow(2,extractConfigPararm(configuration, 0));
+
 	// il1 and ul2 BLOCK size in bytes
 	unsigned int ilone_bsize = pow(2, 3+extractConfigPararm(configuration, 2));
 	unsigned int ultwo_bsize = pow(2, 4+extractConfigPararm(configuration, 8));
+
 	// il1 and ul2 size in bytes
 	unsigned int dlone = getdl1size(configuration);
 	unsigned int ilone = getil1size(configuration);
 	unsigned int ultwo = getl2size(configuration);
 	
 	// Conditional 1 in section 8.3
-	
 	if (ilone_bsize < ifq){
 		return 0;
 	}
@@ -164,16 +167,19 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 		// Handling for currently exploring dimension. This is a very dumb
 		// implementation.
 		
+		// Check "start" flag as a way to begin with the first element (0th) in each dimension
 		int nextValue;
 		if (start == 0){
 			nextValue = 0;
 		}
 		else{
+			// Next value is determined by using a global array called "exploreDimOrder"
+			// This array was ordered to reflect the mod value obtained from the PSU ID
 			nextValue = extractConfigPararm(nextconfiguration,
 				exploreDimOrder[currentlyExploringDim]) + 1;
 		}
 		
-		
+		// Make comparison using the global array
 		if (nextValue >= GLOB_dimensioncardinality[exploreDimOrder[currentlyExploringDim]]) {
 			nextValue = GLOB_dimensioncardinality[exploreDimOrder[currentlyExploringDim]] - 1;
 			currentDimDone = true;
@@ -181,8 +187,7 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 		
 		ss << nextValue << " ";
 
-		// Fill in remaining independent params with 0.
-		
+		// Make comparison using the global array
 		for (int dim = (exploreDimOrder[currentlyExploringDim] + 1);
 				dim < (NUM_DIMS - NUM_DIMS_DEPENDENT); ++dim) {
 			ss << extractConfigPararm(bestConfig, dim) << " ";
@@ -210,8 +215,8 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 			currentDimDone = false;
 		}
 		
-		// Signal that DSE is complete after this configuration.
-		
+		// We explore 1000 design points by iterating through each dimension twice
+		// A global variable is used to indicate that each dimension has been iterated once
 		if (currentlyExploringDim == (NUM_DIMS - NUM_DIMS_DEPENDENT) && round_count == 0){
 			currentlyExploringDim = 0;
 			round_count++;
